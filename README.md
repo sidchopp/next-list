@@ -32,3 +32,29 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Next.js
+
+A React framework for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more.
+
+- Framework for creating pre-rendered websites
+- Offers us both server side rendering(SSR) and static site generation(SSG)
+- SSR: When React components are rendered into HTML pages on the server, when a page request comes from the browser
+- SSG: When React components are rendered into HTML pages at the built time, so that we can deploy the webpages and JS bundles them
+- SO Next.js creates pre-rendered React components before sending them to the browser. The benefits:
+
+1. Pre-rendering improves performance
+1. Better SEO(search engine optimization)
+
+- Without Next, React renders components in the browser, called Client side rendering.
+
+### Installation
+
+`npx create-next-app next-list`
+
+### Folders inside Next App
+
+1. pages: Here all different pages components will be created. Every page in Next has its own React component.
+1. api: for all api end points
+1. public: for images,etc
+1. styles: for CSS files
