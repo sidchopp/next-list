@@ -58,7 +58,7 @@ A React framework for production: hybrid static & server rendering, TypeScript s
 1. api: for all api end points
 1. public: for images,etc
 1. styles: for CSS files
-1. `_app.js`: This file, inside `pages` folder, runs all our pages. It renders <Component {...pageProps}>
+1. `_app.js`: This file, inside `pages` folder, runs all our pages. It renders `<Component {...pageProps}>`
 
 ### run it locally
 
@@ -158,4 +158,4 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-- Delete <Navbar /> and <Footer /> from `index.js`. So, now whenever we create a new page, that page always has a Navbar at top and a Footer at bottom.
+- Delete `<Navbar />` and `<Footer />` from `index.js`. So, now whenever we create a new page, that page always has a Navbar at top and a Footer at bottom.
