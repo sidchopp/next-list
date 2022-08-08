@@ -1,7 +1,8 @@
+import styles from "../styles/Home.module.css";
+
 const Footer = () => {
   return (
-    <div>
-      {" "}
+    <div className={styles.footer}>
       <a
         href="https://sid-projects.netlify.app/"
         target="_blank"

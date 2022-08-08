@@ -102,7 +102,7 @@ export default About;
 import Link from "next/link";
 ```
 
-- Then, surround the anchor tags with this `link` component ang git `href` prop/attribute to it. Like this:
+- Then, surround the anchor tags with this `link` component and include `href` prop/attribute to it. Like this:
 
 ```js
 <Link href="/">
@@ -115,4 +115,45 @@ import Link from "next/link";
 - Code-splitting is the process of splitting the application’s bundle into smaller chunks required by each entry point. The goal is to improve the application's initial load time by only loading the code required to run that page.
 - Next.js has built-in support for code splitting. Each file inside your pages/ directory will be automatically code split into its own JavaScript bundle during the build step.
 - So, ONLY the code that is needed for a page is served from the server. When we go to some other page for the 1st time, say be clicking a button, ONLY then the code needed to serve that particular page will be server by the server. AFter that if we go back to that page after some time, server will not server that page again because we already have it.
-- Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetching is only enabled in production. Prefetch the page in the background. Defaults to true.SO, that makes a very quick user experience
+- Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetching is only enabled in production. Prefetch the page in the background. Defaults to true.SO, that makes a very quick user experience.
+
+### Creating a layout component
+
+- Let's create a layout component that contains a Header and a Footer component. Then this LAyout component wraps all our pages. Create `Layout` component and write:
+
+```js
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+
+const Layout = ({ children }) => {
+  return (
+    <div className="content">
+      <Navbar />
+      {children}
+      <Footer />
+    </div>
+  );
+};
+
+export default Layout;
+```
+
+- Go to `_app.js` file and write:
+
+```js
+import "../styles/globals.css";
+// Components
+import Layout from "../components/Layout";
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
+}
+
+export default MyApp;
+```
+
+- Delete <Navbar /> and <Footer /> from `index.js`
