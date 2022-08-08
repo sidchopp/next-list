@@ -159,3 +159,7 @@ export default MyApp;
 ```
 
 - Delete `<Navbar />` and `<Footer />` from `index.js`. So, now whenever we create a new page, that page always has a Navbar at top and a Footer at bottom.
+
+### CSS
+
+- `global.css` inside `styles` folder: Any CSS we write inside `global.css` file, is applied to the whole App
