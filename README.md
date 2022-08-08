@@ -130,6 +130,7 @@ const Layout = ({ children }) => {
   return (
     <div className="content">
       <Navbar />
+      {/* Here children refers to <Component {...pageProps}>, ie all our pages */}
       {children}
       <Footer />
     </div>
@@ -149,7 +150,6 @@ import Layout from "../components/Layout";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      {/* Here children refers to <Component {...pageProps}>, ie all our pages */}
       <Component {...pageProps} />
     </Layout>
   );
