@@ -52,12 +52,13 @@ A React framework for production: hybrid static & server rendering, TypeScript s
 
 `npx create-next-app next-list`
 
-### Folders inside Next App
+### Folders/files inside Next App
 
 1. pages: Here all different pages components will be created. Every page in Next has its own React component.So, for about page we will have an about component,for contact page we ll have a contact component, etc.
 1. api: for all api end points
 1. public: for images,etc
 1. styles: for CSS files
+1. `_app.js`: This file, inside `pages` folder, runs all our pages. It renders <Component {...pageProps}>
 
 ### run it locally
 
