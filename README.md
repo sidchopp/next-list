@@ -149,6 +149,7 @@ import Layout from "../components/Layout";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
+      {/* Here children refers to <Component {...pageProps}>, ie all our pages */}
       <Component {...pageProps} />
     </Layout>
   );
@@ -157,4 +158,4 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-- Delete <Navbar /> and <Footer /> from `index.js`
+- Delete <Navbar /> and <Footer /> from `index.js`. So, now whenever we create a new page, that page always has a Navbar at top and a Footer at bottom.
