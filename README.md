@@ -64,7 +64,7 @@ A React framework for production: hybrid static & server rendering, TypeScript s
 `npm run dev`
 
 - And you will be shown `url : http://localhost:3000`
-- Copt this url and paste it in browser and you will see your Next App running.
+- Copy this url and paste it in browser and you will see your Next App running.
 
 ### pages folder
 
@@ -92,3 +92,27 @@ export default About;
 ### Dropping components
 
 - These are not page components, which we can reuse in different page components. Examples are Navbar comp, contact form comp. We DO NOT store these dropping components inside `pages` folder. We store them in a different folder, created in root, say `comps` or `components`. Let's create a folder `components` and inside it create a file called `Navbar.js`. Then we go to `index.js` and import it there.
+
+### Linking Pages
+
+- Client-side transitions between routes can be enabled via the Link component exported by `next/link`.
+- Let's go to `Navbar` component and at top write:
+
+```js
+import Link from "next/link";
+```
+
+- Then, surround the anchor tags with this `link` component ang git `href` prop/attribute to it. Like this:
+
+```js
+<Link href="/">
+  <a>Home</a>
+</Link>
+```
+
+### Code Splitting
+
+- Code-splitting is the process of splitting the application’s bundle into smaller chunks required by each entry point. The goal is to improve the application's initial load time by only loading the code required to run that page.
+- Next.js has built-in support for code splitting. Each file inside your pages/ directory will be automatically code split into its own JavaScript bundle during the build step.
+- So, ONLY the code that is needed for a page is served from the server. When we go to some other page for the 1st time, say be clicking a button, ONLY then the code needed to serve that particular page will be server by the server. AFter that if we go back to that page after some time, server will not server that page again because we already have it.
+- Any <Link /> that is in the viewport (initially or through scroll) will be preloaded. Prefetching is only enabled in production. Prefetch the page in the background. Defaults to true.SO, that makes a very quick user experience

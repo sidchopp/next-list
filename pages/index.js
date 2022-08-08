@@ -2,6 +2,9 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 
 //components
+import Link from "next/link";
+
+// components
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -27,6 +30,9 @@ export default function Home() {
           </a>{" "}
           project
         </h1>
+        <Link href="/persons">
+          <a>See My Listing</a>
+        </Link>
       </main>
       <footer className={styles.footer}>
         <Footer />
