@@ -165,4 +165,34 @@ export default MyApp;
 - `global.css` inside `styles` folder (created by default by Next): Any CSS we write inside `global.css` file, is applied to anything on the whole App
 - in `_app.js`, we have `import "../styles/globals.css";`, which means every component/pages that are rendered by `_app.js` will have these styles.
 - For component/page specific styles, we use `Home.module.css` (created by default by Next). We create component specific CSS in this module and then import it in that component/page. After that where we want to apply these CSS, we use `className = {styles.nameOfClass}`. If we now go to developer tools and then go to Elements and inspect this class, we will see a random set of characters/numbers after this class name. For example : `.Home_description__41Owk`. This way we don't have to worry about class names(or name clashes) for our CSS as Next will take care of it.So, Next will scope this CSS to that page only.If we use the same class name in some other page, Next will give it a different random name.
-- So, if we want to create a new file say `list.module.css` for my page, say `listDetails.js`, then I will just import the module.css file in that component and using className attribute, we can apply that CSS in that page. So, just remember, the convention is to write like this: `name.module.css`
+- So, if we want to create a new file say `list.module.css` for a page, say `listDetails.js`, then simply import the `list.module.css` file in `listDetails.js` and using className attribute, we can apply that CSS in that page. So, just remember, the convention is to write like this: `name.module.css`
+- NOTE: in `module.css` files we use class selectors and not element selectors. For ex: we can use `.btn` or `.title` and not `p` or `h1`.
+
+### Not found page
+
+- If a user goes to an endpoint that does not exist, we want to show a custom 404 page.
+- In `pages` folder, we create a file called `404.js`. NOTE: Next does not create a route, `/404` for this. It just means that whenever a Use asks for an unknown endpoint, this page will be displayed.
+- Inside this `404.js` file, write:
+
+```js
+import Link from "next/link";
+
+const NotFound = () => {
+  return (
+    <div className="not-found">
+      <h1>Ooops!</h1>
+      <h2>Page not found...</h2>
+      <p>
+        Go back to
+        <link href="/">
+          <a>Homepage</a>
+        </link>
+      </p>
+    </div>
+  );
+};
+
+export default NotFound;
+```
+
+- So, we don't have to import this `404.js` file anywhere. Next, under the hood, takes care of it.So, if we go to any url or endpoint that does not exist, it will lead us to this 404 page we have just created.
