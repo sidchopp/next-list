@@ -11,6 +11,15 @@
   justify-content: center;
   align-items: center;
 }
+.btn {
+  display: block;
+  text-align: center;
+  border-radius: 4px;
+  width: 150px;
+  background: #4979ff;
+  color: white;
+  margin: 20px auto;
+}
 
 .footer {
   display: flex;
@@ -42,7 +51,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 .title,

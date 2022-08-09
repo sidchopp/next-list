@@ -162,4 +162,7 @@ export default MyApp;
 
 ### CSS
 
-- `global.css` inside `styles` folder: Any CSS we write inside `global.css` file, is applied to the whole App
+- `global.css` inside `styles` folder (created by default by Next): Any CSS we write inside `global.css` file, is applied to anything on the whole App
+- in `_app.js`, we have `import "../styles/globals.css";`, which means every component/pages that are rendered by `_app.js` will have these styles.
+- For component/page specific styles, we use `Home.module.css` (created by default by Next). We create component specific CSS in this module and then import it in that component/page. After that where we want to apply these CSS, we use `className = {styles.nameOfClass}`. If we now go to developer tools and then go to Elements and inspect this class, we will see a random set of characters/numbers after this class name. For example : `.Home_description__41Owk`. This way we don't have to worry about class names(or name clashes) for our CSS as Next will take care of it.So, Next will scope this CSS to that page only.If we use the same class name in some other page, Next will give it a different random name.
+- So, if we want to create a new file say `list.module.css` for my page, say `listDetails.js`, then I will just import the module.css file in that component and using className attribute, we can apply that CSS in that page. So, just remember, the convention is to write like this: `name.module.css`
