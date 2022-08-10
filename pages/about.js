@@ -1,7 +1,7 @@
 const About = () => {
   return (
     <div>
-      <h1> Calgary</h1>
+      <h2> About</h2>
       <p>
         Calgary is a large city in the western Canadian province of Alberta.It
         is situated at the confluence of the Bow River and the Elbow River in
@@ -10,6 +10,15 @@ const About = () => {
         of the front ranges of the Canadian Rockies, roughly 299 km (186 mi)
         south of the provincial capital of Edmonton and approximately 240 km
         (150 mi) north of the Canada–United States border.
+      </p>
+      <p>
+        <a
+          href="https://www.calgary.ca/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          More..
+        </a>
       </p>
     </div>
   );
