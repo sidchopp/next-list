@@ -196,3 +196,8 @@ export default NotFound;
 ```
 
 - So, we don't have to import this `404.js` file anywhere. Next, under the hood, takes care of it.So, if we go to any url or endpoint that does not exist, it will lead us to this 404 page we have just created.
+
+### public folder - For Static Assets
+
+- To use static assets like images, logos, etc. in our Next App, we put them in `public` folder
+- We can import `Image` component from Next and use `import Image from 'next/image'`

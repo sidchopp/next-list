@@ -13,18 +13,20 @@ export default function Home() {
 
       <main>
         <h1 className={styles.title}>
-          My first{" "}
+          Hi, I m Sid and this is my first{" "}
           <a
             href="https://nextjs.org"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Next.js!
+            Next.js
           </a>{" "}
           project
         </h1>
-        <Link href="/persons">
-          <a className={styles.btn}>See My Listing</a>
+        <h4 className={styles.description}> I live in Calgary AB, Canada.</h4>
+
+        <Link href="/places">
+          <a className={styles.btn}>Visit Calgary</a>
         </Link>
       </main>
     </div>
